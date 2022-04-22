@@ -43,8 +43,6 @@ app.get("/search", (req, res) => {
   });
 });
 
-app.post("/search", (req, res) => {});
-
 app.listen(PORT, () => {
   console.log(`server started on port ${PORT}`);
 });
