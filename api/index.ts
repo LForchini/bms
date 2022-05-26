@@ -10,7 +10,7 @@ import Person from "./src/models/Person.model";
 import Review from "./src/models/Review.model";
 
 const app = express();
-const PORT = 3000;
+const PORT = 80;
 
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.url}`);
