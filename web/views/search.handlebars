@@ -1,6 +1,6 @@
 <h1>Search</h1>
 
-<form method="get">
+<form method="get" action="/results">
   <label for="title">Title: </label>
   <input id="title" name="title" type="text" />
   <br />
@@ -11,18 +11,5 @@
 
   <input type="submit" value="Search" />
 </form>
-
-<p>
-  Title:
-  {{#if query.title}}{{query.title}}{{else}}unused{{/if}}
-
-  <br />
-  Id:
-  {{#if query.id}}{{query.id}}{{else}}unused{{/if}}
-
-  <br />
-  HasParams:
-  {{#if (hasParams query)}}true{{else}}false{{/if}}
-</p>
 
 <a href="/">Back</a>

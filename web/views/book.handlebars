@@ -1,3 +1,13 @@
-<h1>This is a book page for book {{id}}</h1>
+<h1>{{title}}</h1>
+<h2>By {{author.name}}</h2>
+
+<ol>
+  {{#each reviews}}
+    <li>
+      <h3>{{this.title}}</h3>
+      <p>{{this.body}}</p>
+    </li>
+  {{/each}}
+</ol>
 
 <a href="/">Back</a>

@@ -1,0 +1,13 @@
+<h2>Searching for: "{{#if query.title}}Title = {{query.title}}{{/if}}
+  {{#if query.id}}Id = {{query.id}}{{/if}}"</h2>
+
+<ul>
+  {{#each books}}
+    <li>
+      {{this.title}}
+      - By
+      {{this.author.name}}
+      {{#if this.review}}(Reviewed){{/if}}
+    </li>
+  {{/each}}
+</ul>
