@@ -1,6 +1,9 @@
 import express from "express";
 import { sequelize } from "./src/sequelize";
+
 import { app as BookRoute } from "./src/routes/book";
+import { app as PersonRoute } from "./src/routes/person";
+import { app as ReviewRoute } from "./src/routes/review";
 
 import Book from "./src/models/Book.model";
 import Person from "./src/models/Person.model";
@@ -14,7 +17,11 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.json());
+
 app.use("/books", BookRoute);
+app.use("/persons", PersonRoute);
+app.use("/authors", PersonRoute);
+app.use("/reviews", ReviewRoute);
 
 app.listen(PORT, async () => {
   await sequelize.sync({ force: true });
