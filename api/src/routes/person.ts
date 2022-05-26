@@ -5,7 +5,7 @@ import Person from "../models/Person.model";
 export const app = express.Router({ mergeParams: true });
 
 app.get("/", async (req, res) => {
-  const persons = await Person.findAll({ include: [Book] });
+  const persons = await Person.findAll();
 
   res.send(JSON.stringify(persons));
 });
@@ -18,7 +18,7 @@ app.post("/", async (req, res) => {
 });
 
 app.get("/:id", async (req, res) => {
-  const person = await Person.findByPk(req.params.id);
+  const person = await Person.findByPk(req.params.id, { include: [Book] });
 
   if (person) {
     res.send(JSON.stringify(person));

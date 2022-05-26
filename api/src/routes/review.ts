@@ -5,7 +5,7 @@ import Review from "../models/Review.model";
 export const app = express.Router({ mergeParams: true });
 
 app.get("/", async (req, res) => {
-  const reviews = await Review.findAll({ include: [Book] });
+  const reviews = await Review.findAll();
 
   res.send(JSON.stringify(reviews));
 });
@@ -25,7 +25,7 @@ app.post("/", async (req, res) => {
 });
 
 app.get("/:id", async (req, res) => {
-  const review = await Review.findByPk(req.params.id);
+  const review = await Review.findByPk(req.params.id, { include: [Book] });
 
   if (review) {
     res.send(JSON.stringify(review));

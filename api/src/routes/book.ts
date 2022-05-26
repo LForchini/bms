@@ -6,9 +6,7 @@ import Review from "../models/Review.model";
 export const app = express.Router({ mergeParams: true });
 
 app.get("/", async (req, res) => {
-  const books = await Book.findAll({
-    include: [Person, Review],
-  });
+  const books = await Book.findAll();
 
   res.send(JSON.stringify(books));
 });
